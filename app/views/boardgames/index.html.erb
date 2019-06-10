@@ -1,0 +1,41 @@
+<div class="container" style="padding-top:50px;">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Boardgames for <%= current_user.email %></h2>
+    </div>
+    <div class="col-md-4 text-right">
+      <%= link_to "New", new_boardgame_path, class: "btn btn-secondary", style: "width:100px;" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <strong>Game</strong>
+    </div>
+    <div class="col-md-2">
+      <strong>Year</strong>
+    </div>
+    <div class="col-md-3">
+      <strong>Players</strong>
+    </div>
+    <div class="col-md-3">
+      <strong>Playing Time</strong>
+    </div>
+  </div>
+
+  <% @boardgames.each do |boardgame| %>
+    <div class="row" style="margin-top:10px;">
+      <div class="col-md-4">
+        <%= link_to boardgame.name, boardgame_path(boardgame) %>
+      </div>
+      <div class="col-md-2">
+        <%= boardgame.year_published %>
+      </div>
+      <div class="col-md-3">
+        <%= boardgame.min_players %>-<%= boardgame.max_players %>
+      </div>
+      <div class="col-md-3">
+        <%=boardgame.min_playing_time %>-<%= boardgame.max_playing_time %>
+      </div>
+    </div>
+  <% end %>
+</div

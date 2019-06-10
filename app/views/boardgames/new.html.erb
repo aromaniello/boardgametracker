@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row" style="margin-top:10px;">
+    <div class="col-md-8">
+      <h3>Add new boardgame</h3>
+    </div>
+    <div class="col-md-4 text-right">
+      <%= link_to "< Back", boardgames_path %>
+    </div>
+  </div>
+  <%= simple_form_for @boardgame do |f| %>
+    <%= f.input :name %>
+    <%= f.input :year_published %>
+    <%= f.input :min_players %>
+    <%= f.input :max_players %>
+    <%= f.input :min_playing_time %>
+    <%= f.input :max_playing_time %>
+    <%= f.input :min_age %>
+    <%= f.input :image_url %>
+    <%= f.input :thumbnail_url %>
+    <%= f.input :description %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>
