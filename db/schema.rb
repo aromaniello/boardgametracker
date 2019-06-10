@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_06_09_220016) do
     t.integer "min_playing_time"
     t.integer "max_playing_time"
     t.integer "min_age"
+    t.integer "bgg_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_boardgames_on_user_id"

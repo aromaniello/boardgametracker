@@ -13,6 +13,7 @@ class CreateBoardgames < ActiveRecord::Migration[5.2]
       t.integer :min_playing_time
       t.integer :max_playing_time
       t.integer :min_age
+      t.integer :bgg_id
 
       t.timestamps
     end

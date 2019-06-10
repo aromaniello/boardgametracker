@@ -9,7 +9,17 @@
       <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-dark", style: "width:100px;" %>
     </div>
   </div>
-  <div class="row">
+  <div class="row" style="margin-top:20px;">
+    <div class="col-md-12">
+      <%= form_tag "/boardgames/import", method: :post do %>
+        <div class="form-group">
+          Import from BGG user: <%= text_field_tag :bgg_username %>
+          <%= submit_tag "Import", class: "btn-small btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row" style="margin-top:20px;">
     <div class="col-md-4">
       <strong>Game</strong>
     </div>

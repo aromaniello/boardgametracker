@@ -23,14 +23,18 @@ class BoardgamesController < ApplicationController
   end
 
   def update
-    #@boardgame = current_user.boardgames.find(params[:id])
     boardgame.update(boardgame_params)
     redirect_to boardgame
   end
 
   def destroy
-    #@boardgame = current_user.boardgames.find(params[:id])
     boardgame.destroy
+    redirect_to boardgames_path
+  end
+
+  def bgg_import
+    current_user.import_boardgames(params[:bgg_username])
+    redirect_to boardgames_path
   end
 
   private
