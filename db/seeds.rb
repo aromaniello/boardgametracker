@@ -1,7 +1,7 @@
 User.delete_all
 Boardgame.delete_all
 
-user = User.create!(email: "bixon@example.com", password: "testpass", password_confirmation: "testpass")
+user = User.create!(email: "bixon@example.com", username: "bixon", password: "testpass", password_confirmation: "testpass")
 
 bg = user.boardgames.new
 bg.name = "Gloomhaven"

@@ -1,10 +1,12 @@
 <div class="container" style="padding-top:50px;">
   <div class="row">
     <div class="col-md-8">
-      <h2>Boardgames for <%= current_user.email %></h2>
+      <h2>Boardgames for <%= current_user.username %></h2>
     </div>
     <div class="col-md-4 text-right">
       <%= link_to "New", new_boardgame_path, class: "btn btn-secondary", style: "width:100px;" %>
+      <%= link_to "Import", new_boardgame_path, class: "btn btn-secondary", style: "width:100px;" %>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-dark", style: "width:100px;" %>
     </div>
   </div>
   <div class="row">
